@@ -101,7 +101,7 @@ class ContentNavigator implements SubscriptionProvider {
       commands.registerCommand(
         `${SAS}.deleteResource`, //
         async (item: ContentItem) => {
-          // console.log("item-------", item);
+          // console.log("item to delete-----------", item);
           this.treeViewSelections(item).forEach(
             async (resource: ContentItem) => {
               if (!resource.contextValue.includes("delete")) {
