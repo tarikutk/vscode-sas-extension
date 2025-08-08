@@ -99,8 +99,9 @@ class ContentNavigator implements SubscriptionProvider {
     return [
       ...this.contentDataProvider.getSubscriptions(),
       commands.registerCommand(
-        `${SAS}.deleteResource`,
+        `${SAS}.deleteResource`, //
         async (item: ContentItem) => {
+          // console.log("item-------", item);
           this.treeViewSelections(item).forEach(
             async (resource: ContentItem) => {
               if (!resource.contextValue.includes("delete")) {
@@ -111,9 +112,10 @@ class ContentNavigator implements SubscriptionProvider {
                 this.contentDataProvider.canRecycleResource(resource);
 
               if (
-                !moveToRecycleBin &&
+                !moveToRecycleBin && // should be || ?
                 !(await window.showWarningMessage(
                   l10n.t(Messages.DeleteWarningMessage, {
+                    //
                     name: resource.name,
                   }),
                   { modal: true },

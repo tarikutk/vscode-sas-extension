@@ -63,6 +63,7 @@ export const Messages = {
   AddToFavoritesError: l10n.t("The item could not be added to My Favorites."),
   DeleteButtonLabel: l10n.t("Delete"),
   DeleteWarningMessage: l10n.t(
+    //
     'Are you sure you want to permanently delete the item "{name}"?',
   ),
   EmptyRecycleBinError: l10n.t("Unable to empty the recycle bin."),

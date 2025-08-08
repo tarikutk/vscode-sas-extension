@@ -656,6 +656,7 @@ class RestContentAdapter implements ContentAdapter {
   }
 
   private async deleteFolder(item: ContentItem): Promise<boolean> {
+    //
     try {
       const children = await this.getChildItems(item);
       await Promise.all(children.map((child) => this.deleteItem(child)));
